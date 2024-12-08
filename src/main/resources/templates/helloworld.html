@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf</title>
+    <link rel="stylesheet" th:href="@{/css/mystyle.css}">
+<!--    Это мы добавили ссылку на файл-->
+</head>
+<body>
+
+<p th:text="'Today is '+${today}" class="firststyle"/>
+
+</body>
+</html>

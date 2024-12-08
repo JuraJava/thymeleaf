@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pupil Form</title>
+</head>
+<body>
+
+<br>
+<br>
+<!--Тегами <br> мы добавляем линию чтобы поля шли ниже, а не в одну строку-->
+<form th:action="@{/processPupilForm}" method="get">
+<!--action показывает какое действие будет вызываться при отправке формы-->
+<!--При отправке формы мы будем открывать другую страницу, которая -->
+<!--обозначается далее после знака = значком @ -->
+    <input type="text" name="pupilName" placeholder="Enter name of pupil"/>
+<!--    name - так называется наше поле, placeholder - это что будет -->
+<!--    отображаться как текст подсказки-->
+    <br>
+    <br>
+    <br>
+    <input type="submit">
+<!--    Мы добавили на форме кнопку Submit (Отправить, Представить)-->
+<!--    Между тегами form мы можем добавлять какие-то поля этой формы-->
+
+</form>
+
+</body>
+</html>
