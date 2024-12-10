@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class PupilController {
@@ -24,8 +25,27 @@ public class PupilController {
     }
 
     @RequestMapping("/processPupilFormV2")
-    public String correctName(HttpServletRequest request, Model model) {
+    public String correctName2(HttpServletRequest request, Model model) {
+        // Такой способ лучше использовать когда у нас более одного параметра
         String oldNameLowerCase = request.getParameter("pupilName").toLowerCase();
+        String correctName = "";
+        String[] words = oldNameLowerCase.split(" ");
+        for (String word : words) {
+            String firstLetter = word.substring(0, 1).toUpperCase();
+            word = firstLetter + word.substring(1);
+            correctName += word + " ";
+        }
+        correctName = correctName.trim();
+        model.addAttribute("correctName", correctName);
+        return "pupil-info";
+    }
+
+    // Всё что выше можно сделать и по другому:
+
+    @RequestMapping("/processPupilFormV3")
+    public String correctName3(@RequestParam("pupilName") String pupilName, Model model) {
+        // Такой способ лучше использовать когда у нас всего один параметр
+        String oldNameLowerCase = pupilName.toLowerCase();
         String correctName = "";
         String[] words = oldNameLowerCase.split(" ");
         for (String word : words) {
