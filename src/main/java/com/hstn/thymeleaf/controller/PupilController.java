@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -42,7 +43,14 @@ public class PupilController {
 
     // Всё что выше можно сделать и по другому:
 
-    @RequestMapping("/processPupilFormV3")
+    @RequestMapping(value = "/processPupilFormV3", method = RequestMethod.GET)
+    // Эта аннотация только с одним параметром может работать со всеми методами,
+    // а если вместо неё будет указано аннотация @GetMapping, то будет работать только с методом Get и т.д.
+    // Также у этой аннотации можно указывать второй параметр и тогда какой метод во втором
+    // параметре мы укажем только с таким методом и будет работать эта аннотация
+    // Такой же метод должен быть указан и в HTML файле pupil-form.html
+    // Если указан метод Get, то параметры передаются и в URL (в браузере в адресной строке)
+    // но количество таких передаваемых данных ограничено
     public String correctName3(@RequestParam("pupilName") String pupilName, Model model) {
         // Такой способ лучше использовать когда у нас всего один параметр
         String oldNameLowerCase = pupilName.toLowerCase();
