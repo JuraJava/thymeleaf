@@ -4,6 +4,8 @@ public class Pupil {
     private String firstName;
     private String lastName;
     private String sex;
+    private String city;
+    private String favouriteDrink;
 
     public Pupil() {
     }
@@ -32,13 +34,30 @@ public class Pupil {
         this.sex = sex;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getFavouriteDrink() {
+        return favouriteDrink;
+    }
+
+    public void setFavouriteDrink(String favouriteDrink) {
+        this.favouriteDrink = favouriteDrink;
+    }
+
     @Override
     public String toString() {
         return "Pupil{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", sex='" + sex + '\'' +
+                ", city='" + city + '\'' +
+                ", favouriteDrink='" + favouriteDrink + '\'' +
                 '}';
     }
-
 }

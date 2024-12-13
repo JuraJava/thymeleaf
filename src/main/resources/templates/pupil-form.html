@@ -17,10 +17,24 @@
     <br><br>
     Last name: <input type="text" th:field="*{lastName}"/>
     <br><br>
+
+    Sex:
     <select th:field="*{sex}">
         <option th:value="Boy">Boy</option>
         <option th:value="Girl">Girl</option>
     </select>
+    <br><br>
+
+    City:
+    <select th:field="*{city}">
+        <option th:each="tempCity : ${cities}" th:value="${tempCity}" th:text="${tempCity}"/>
+        <!--    здесь мы циклом проходимся-->
+    </select>
+    <br><br>
+
+    Favorite drink:
+    <input type="radio" th:field="*{favouriteDrink}" th:each="tempDrink : ${drinks}"
+           th:value="${tempDrink}" th:text="${tempDrink}"/>
 
     <br><br>
     <input type="submit" value="Submit">

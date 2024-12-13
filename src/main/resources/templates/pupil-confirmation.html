@@ -10,11 +10,15 @@
 <h2>Pupil form</h2>
 <br><br>
 
-The pupil is: <span th:text="${pupil.firstName} + ' ' + ${pupil.lastName} + '.'"></span>
+The pupil is: <span th:text="${pupil.firstName} + ' ' + ${pupil.lastName}"/>.
 <!--В строке кода выше чтобы отделить firstName от lastName мы этот пробел указываем в -->
 <!--одинарных кавычках, т.к. мы уже находимся в двойных кавычках-->
 <br>
-This is a <span th:text="${pupil.sex} + '.'"></span>
+This is a <span th:text="${pupil.sex}"/>.
+<br>
+Pupil from  <span th:text="${pupil.city}"/>.
+<br>
+Pupil favourite drink:  <span th:text="${pupil.favouriteDrink}"/>.
 
 </body>
 </html>
