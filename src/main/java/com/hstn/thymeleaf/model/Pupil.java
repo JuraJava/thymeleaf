@@ -3,6 +3,7 @@ package com.hstn.thymeleaf.model;
 public class Pupil {
     private String firstName;
     private String lastName;
+    private String sex;
 
     public Pupil() {
     }
@@ -23,11 +24,21 @@ public class Pupil {
         this.lastName = lastName;
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
     @Override
     public String toString() {
         return "Pupil{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", sex='" + sex + '\'' +
                 '}';
     }
+
 }
