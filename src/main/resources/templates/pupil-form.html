@@ -38,11 +38,14 @@
     <br><br>
 
     Favorite cars:
-    <input type="checkbox" th:field="*{favouriteCars}" th:value="BMV">BMV</input>
-    <input type="checkbox" th:field="*{favouriteCars}" th:value="AUDI">AUDI</input>
-    <input type="checkbox" th:field="*{favouriteCars}" th:value="'ALFA ROMEO'">ALFA ROMEO</input>
-<!-- Когда слово в кавычках состоит из не одного слова ALFA ROMEO, -->
-<!-- то необходимо кроме двойных устанавливать и одинарные кавычки-->
+    <!--    <input type="checkbox" th:field="*{favouriteCars}" th:value="BMV">BMV</input>-->
+    <!--    <input type="checkbox" th:field="*{favouriteCars}" th:value="AUDI">AUDI</input>-->
+    <!--    <input type="checkbox" th:field="*{favouriteCars}" th:value="'ALFA ROMEO'">ALFA ROMEO</input>-->
+    <!--&lt;!&ndash; Когда слово в кавычках состоит из не одного слова ALFA ROMEO, &ndash;&gt;-->
+    <!--&lt;!&ndash; то необходимо кроме двойных устанавливать и одинарные кавычки&ndash;&gt;-->
+
+    <input type="checkbox" th:field="*{favouriteCars}" th:each="tempCar : ${cars}"
+           th:value="${tempCar}" th:text="${tempCar}"/>
 
     <br><br>
     <input type="submit" value="Submit">

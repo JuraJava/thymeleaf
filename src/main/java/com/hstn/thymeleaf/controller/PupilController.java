@@ -21,6 +21,10 @@ public class PupilController {
     @Value("${cities}")
     private List<String> cities;
 
+    @Value("${cars}")
+    private List<String> cars;
+
+
     @GetMapping("/showPupilForm")
     public String showForm(Model model) {
 //        model.addAttribute("pupil", new Pupil()); - Это более короткая запись
@@ -28,6 +32,7 @@ public class PupilController {
         model.addAttribute("pupil", pupil);
         model.addAttribute("cities", cities);
         model.addAttribute("drinks", drinks);
+        model.addAttribute("cars", cars);
         return "pupil-form";
     }
 
