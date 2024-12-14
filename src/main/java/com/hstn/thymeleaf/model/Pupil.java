@@ -1,11 +1,15 @@
 package com.hstn.thymeleaf.model;
 
+import java.util.List;
+
 public class Pupil {
     private String firstName;
     private String lastName;
     private String sex;
     private String city;
     private String favouriteDrink;
+    private List<String> favouriteCars;
+    // Здесь List потому что может быть выбрана не одна машина
 
     public Pupil() {
     }
@@ -46,6 +50,14 @@ public class Pupil {
         return favouriteDrink;
     }
 
+    public List<String> getFavouriteCars() {
+        return favouriteCars;
+    }
+
+    public void setFavouriteCars(List<String> favouriteCars) {
+        this.favouriteCars = favouriteCars;
+    }
+
     public void setFavouriteDrink(String favouriteDrink) {
         this.favouriteDrink = favouriteDrink;
     }
@@ -58,6 +70,7 @@ public class Pupil {
                 ", sex='" + sex + '\'' +
                 ", city='" + city + '\'' +
                 ", favouriteDrink='" + favouriteDrink + '\'' +
+                ", favouriteCars=" + favouriteCars +
                 '}';
     }
 }

@@ -16,9 +16,22 @@ The pupil is: <span th:text="${pupil.firstName} + ' ' + ${pupil.lastName}"/>.
 <br>
 This is a <span th:text="${pupil.sex}"/>.
 <br>
-Pupil from  <span th:text="${pupil.city}"/>.
+Pupil from <span th:text="${pupil.city}"/>.
 <br>
-Pupil favourite drink:  <span th:text="${pupil.favouriteDrink}"/>.
+Pupil favourite drink: <span th:text="${pupil.favouriteDrink}"/>.
+<br>
+Pupil favourite cars:
+<!--<span th:text="${pupil.favouriteCars}"/>.-->
+<!--<br>-->
+<!--&lt;!&ndash;Будут отображаться в квадратных скобках через запятую&ndash;&gt;-->
+<!--<ul>-->
+<!--    <li th:each="oneCar :${pupil.favouriteCars}" th:text="${oneCar}"></li>-->
+<!--</ul>-->
+<!--&lt;!&ndash;Будут отображаться на разных строках, перед строкой жирная точка, один под другим&ndash;&gt;-->
+<ol>
+    <li th:each="oneCar :${pupil.favouriteCars}" th:text="${oneCar}"></li>
+</ol>
+<!--Будут отображаться по номеру на разных строках-->
 
 </body>
 </html>
